@@ -131,62 +131,9 @@ Frontend (Vite + Bun)
 ---
  
 ## Folder Structure
- 
-```
-scooby/
-│
-├── frontend/                     # Bun + Vite frontend
-│   └── src/
-│       ├── components/
-│       │   ├── audit/
-│       │   │   ├── AuditForm.tsx        # 3-tab input: paste / upload / program ID
-│       │   │   ├── AuditReport.tsx      # score ring + expandable findings
-│       │   │   ├── FeeGate.tsx          # payment screen before audit runs
-│       │   │   └── AuditHistory.tsx     # past audits list
-│       │   ├── layout/
-│       │   │   ├── Navbar.tsx
-│       │   │   └── Footer.tsx
-│       │   └── wallet/
-│       │       └── WalletConnect.tsx
-│       ├── hooks/
-│       │   ├── useAudit.ts              # calls /api/audit, manages report state
-│       │   ├── useFee.ts                # builds + sends 0.008 SOL payment tx
-│       │   ├── useProfile.ts            # fetches profile + history
-│       │   └── useWallet.ts             # wallet adapter wrapper
-│       └── pages/
-│           ├── Home.tsx
-│           ├── Audit.tsx                # main flow: form → fee → scan → result
-│           ├── Profile.tsx              # dashboard with history and stats
-│           └── Verify.tsx              # verify any badge by tx signature
-│
-├── backend/                      # Bun + Express API
-│   └── src/
-│       ├── db/
-│       │   ├── client.ts                # NeonDB connection
-│       │   ├── migrate.ts               # creates all tables
-│       │   ├── users.repo.ts            # profile upsert, audit count
-│       │   ├── audit.repo.ts            # save + fetch audit history
-│       │   └── fees.repo.ts             # log every fee payment
-│       ├── services/
-│       │   ├── ai/
-│       │   │   ├── ai.service.ts        # routes to Gemini or Claude via env var
-│       │   │   ├── gemini.service.ts    # active AI provider
-│       │   │   └── claude.service.ts    # ready to activate
-│       │   └── solana/
-│       │       ├── fee.service.ts       # verifies on-chain payment
-│       │       └── badge.service.ts     # mints attestation
-│       └── routes/
-│           ├── audit.route.ts
-│           ├── user.route.ts
-│           └── badge.route.ts
-│
-└── contract/                     # Anchor smart contract
-    └── programs/scooby/src/
-        └── lib.rs                       # UserProfile PDA, collect_fee, Attestation
-    └── tests/
-        └── scooby.ts                    # 9 tests: happy path + rejection cases
-```
- 
+ <p align="left">
+    <img src="assets/folderStr.png" alt="Folder Structure"/>
+</p>
 ---
  
 ## Smart Contract
