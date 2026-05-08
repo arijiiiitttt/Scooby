@@ -131,6 +131,8 @@ Frontend (Vite + Bun)
 ---
  
 ## Folder Structure
+
+---
  <p align="left">
     <img src="assets/folderStr.png" alt="Folder Structure"/>
 </p>
