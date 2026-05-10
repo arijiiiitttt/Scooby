@@ -14,7 +14,7 @@ export async function handleGetProfile(req: Request, res: Response): Promise<voi
     const [user, stats, recentAudits] = await Promise.all([
       getUserByWallet(wallet),
       getAuditStats(wallet),
-      getAuditsByWallet(wallet, 5),
+      getAuditsByWallet(wallet, 50),
     ]);
 
     if (!user) { res.status(404).json({ error: "Wallet not found. Run an audit first." }); return; }

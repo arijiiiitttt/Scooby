@@ -3,6 +3,9 @@ import { useStore } from './lib/store'
 import { HomePage } from './components/HomePage'
 import { AuditPage } from './components/AuditPage'
 import { ProfilePage } from './components/ProfilePage'
+import Blog from './pages/Blog'
+import Docs from './pages/Docs'
+
 
 export default function App() {
   const { page } = useStore()
@@ -14,6 +17,8 @@ export default function App() {
         {page === 'home'    && <HomePage />}
         {page === 'audit'   && <AuditPage />}
         {page === 'profile' && <ProfilePage />}
+        {page === 'blog'    && <Blog/>}
+        {page === 'docs'    && <Docs/>}
       </main>
       <Toaster
         position="bottom-right"

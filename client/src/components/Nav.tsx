@@ -61,18 +61,18 @@ export function Nav() {
             Audit
           </button>
 
-          <a
-            href="/blog"
+          <button
+          onClick={() => setPage('blog')}
             className="opacity-80 hover:opacity-100 transition-opacity"
           >
             Blog
-          </a>
-          <a
-            href="/docs"
+          </button>
+          <button
+            onClick={() => setPage('docs')}
             className="opacity-80 hover:opacity-100 transition-opacity"
           >
             Docs
-          </a>
+          </button>
 
           {wallet && (
             <button

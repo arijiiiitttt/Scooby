@@ -4,7 +4,7 @@ import type { AuditReport, FeeInfo } from './api'
 
 export type AIProvider = 'gemini' | 'claude'
 
-type Page = 'home' | 'audit' | 'profile'
+type Page = 'home' | 'audit' | 'profile' | 'blog' | 'docs'
 type AuditStep = 1 | 2 | 3 | 4
 
 interface AppState {

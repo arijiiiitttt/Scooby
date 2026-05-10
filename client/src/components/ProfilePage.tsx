@@ -234,8 +234,8 @@ export function ProfilePage() {
               {audits.length === 0 ? (
                 <p className="text-sm text-slate-600">No audits yet.</p>
               ) : (
-                <div className="divide-y divide-gray-100">
-                  {audits.map((a) => (
+<div className="divide-y divide-gray-100" style={{ maxHeight: '520px', overflowY: 'scroll' }}>
+                {audits.map((a) => (
                     <AuditRow
                       key={a.id}
                       a={a}

@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
+import { useStore } from '../lib/store';
+
 
 const Blog: React.FC = () => {
+  const { setPage } = useStore();
   useEffect(() => {
     document.title = "Scooby Documentation";
   }, []);
@@ -10,9 +13,11 @@ const Blog: React.FC = () => {
       <div className="min-h-screen bg-white text-[#1a1a1a] selection:bg-black selection:text-white px-6 pt-16 pb-24 font-sans antialiased">
         <div className="max-w-[620px] mx-auto">
 
-          <a href="/" className="flex justify-start mb-16">
+          <button 
+          onClick={() => setPage('home')}
+          className="flex justify-start mb-16 cursor-pointer">
             <img className='w-18' src="/images/logo/scooby.png" />
-          </a>
+          </button>
 
           <div className="mb-12 text-[#8c8c8c] text-[15px] leading-relaxed">
             <div className="mt-8 space-y-0.5">
