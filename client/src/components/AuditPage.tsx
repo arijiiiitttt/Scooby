@@ -270,7 +270,7 @@ function StepSubmit() {
         ...(tab === 'code' ? { code } : { programId }),
         provider: aiProvider,
         ...(activeKey.trim() ? { apiKey: activeKey.trim() } : {}),
-      })
+      } as any)
       setReport(report)
       setAuditStep(4)
     } catch (e: any) {

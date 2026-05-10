@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { ChevronDown , ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { Zap, Clock, Heart } from 'lucide-react';
 import { useStore } from '../lib/store'
 import { Nav } from "./Nav";
