@@ -37,32 +37,11 @@ Scooby closes this gap.
 ---
  
 ## How It Works
- 
-```
-Connect Wallet
-     │
-     ▼
-Submit Contract (paste / upload files / program ID)
-     │
-     ▼
-Pay On-Chain Fee (0.008 SOL)
-     │
-     ▼
-Backend Verifies Payment On-Chain
-     │
-     ▼
-AI Scans for Vulnerabilities (Gemini / Claude)
-     │
-     ▼
-Structured Audit Report Generated
-     │
-     ▼
-Report Saved to Profile History
-     │
-     ▼
-Optional: Mint On-Chain Audit Attestation
-```
- 
+
+ <p align="left">
+    <img src="assets/workflow.png" alt="WorkFlow"/>
+</p>
+
 1. **Connect Wallet** — Connect your Phantom wallet. No email, no password. Your wallet is your identity. A profile is created on first connect and your audit history is loaded on return visits.
 2. **Submit Your Contract** — Three ways to submit: paste Anchor/Rust code directly, upload multiple `.rs` and `.toml` files (merged automatically client-side), or provide a deployed program ID.
 3. **Pay the Audit Fee** — The FeeGate screen appears before anything runs. You pay 0.008 SOL, sign the transaction in your wallet, and the signature is sent to the backend for on-chain verification. Only after confirmation does the audit begin.
