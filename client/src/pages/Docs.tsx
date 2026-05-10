@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Footer from "../components/Footer";
 import { useStore } from "../lib/store";
 
@@ -188,13 +188,7 @@ const Docs: React.FC = () => {
   const PageComponent = PAGES[current];
   const groups = [...new Set(NAV.map((n) => n.group))];
 
-  useEffect(() => {
-    const item = NAV.find((n) => n.id === current);
-    document.title = item ? `${item.label} — Scooby` : "Scooby Docs";
-    window.scrollTo({ top: 0 });
-    setMenuOpen(false);
-  }, [current]);
-  
+
   const { setPage } = useStore();
 
   return (

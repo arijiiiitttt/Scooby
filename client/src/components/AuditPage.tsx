@@ -8,6 +8,9 @@ import { StepIndicator, Card, SectionTitle, Btn, Alert } from './ui'
 import { ReportView } from './ReportView'
 import toast from 'react-hot-toast'
 import { NavAudit } from './NavAudit'
+import { RiGeminiFill } from "react-icons/ri";
+import { BsClaude } from "react-icons/bs";
+
 
 const STEPS = ['Connect wallet', 'Pay fee', 'Run audit', 'Mint badge']
 
@@ -64,15 +67,15 @@ function AIProviderPanel() {
                 <button
                   key={p}
                   onClick={() => setAiProvider(p)}
-                  className={`flex-1 py-2 rounded-lg text-sm font-medium border transition-all ${
-                    aiProvider === p
+className={`flex-1 py-2 rounded-lg text-sm font-medium border transition-all flex items-center justify-center gap-2 ${
+                      aiProvider === p
                       ? p === 'gemini'
                         ? 'bg-blue-100 border-blue-300 text-blue-700'
-                        : 'bg-violet-100 border-violet-300 text-violet-700'
+                        : 'bg-orange-100 border-orange-300 text-orange-700'
                       : 'border-gray-200 text-slate-600 hover:border-gray-300 hover:text-gray-900'
                   }`}
                 >
-                  {p === 'gemini' ? '⚡ Gemini' : '🤖 Claude'}
+{p === 'gemini' ? <><RiGeminiFill size={16} /> Gemini</> : <><BsClaude size={16} /> Claude</>}
                 </button>
               ))}
             </div>
@@ -236,7 +239,7 @@ function StepPayFee() {
           <p className="text-xs text-slate-500 mt-0.5">{fi.savingsVsCompetitor} · +~0.000005 SOL network fee</p>
         </div>
         <Btn variant="primary" onClick={handle} loading={loading} disabled={loading}>
-          <CreditCard size={14} />
+          {!loading && <CreditCard size={14} />}
           Pay & continue
         </Btn>
       </div>
@@ -334,7 +337,7 @@ function StepSubmit() {
 
       <div className="flex gap-2 mt-4 flex-wrap">
         <Btn variant="primary" onClick={handle} loading={loading} disabled={loading}>
-          <Search size={14} />
+         {!loading && <Search size={14} />}
           Run audit
         </Btn>
         <Btn
@@ -409,7 +412,7 @@ function StepResults() {
         ) : (
           <div className="flex gap-2 flex-wrap">
             <Btn variant="primary" onClick={handleMint} loading={mintLoading} disabled={mintLoading}>
-              <BadgeCheck size={14} />
+             {!mintLoading && <BadgeCheck size={14} />}
               Mint badge
             </Btn>
             <Btn variant="ghost" onClick={() => { resetAudit(); setAuditStep(2) }}>

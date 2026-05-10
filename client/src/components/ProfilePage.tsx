@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { X, ShieldCheck } from 'lucide-react'
+import { X, ShieldCheck, Plus } from 'lucide-react'
 import { useStore } from '../lib/store'
 import { api } from '../lib/api'
 import type { UserProfile, AuditStats, AuditHistoryItem, AuditReport } from '../lib/api'
@@ -185,7 +185,7 @@ export function ProfilePage() {
               {wallet.slice(0, 8)}…{wallet.slice(-8)}
             </p>
           </div>
-          <Btn variant="primary" onClick={startAudit}>New Audit</Btn>
+          <Btn className="flex flex-row" variant="primary" onClick={startAudit}> <Plus size={20} /> New Audit</Btn>
         </div>
 
         {loading && (

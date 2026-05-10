@@ -1,4 +1,4 @@
-import { Wallet, User } from 'lucide-react';
+import { Wallet, BrickWallShield } from 'lucide-react';
 import { useStore } from '../lib/store';
 import { connectWallet, getProvider, signatureToBase58 } from '../lib/wallet';
 import { api } from '../lib/api';
@@ -56,7 +56,7 @@ export function Navbar() {
             onClick={() => setPage('audit')}
             className="flex items-center gap-2 text-sm text-slate-600 hover:text-gray-900 transition-colors px-4 py-2 rounded-xl hover:bg-gray-100"
           >
-            <User size={18} />
+            <BrickWallShield size={18} />
             Audit
           </button>
         )}

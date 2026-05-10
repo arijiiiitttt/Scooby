@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useStore } from '../lib/store';
 
 
 const Blog: React.FC = () => {
   const { setPage } = useStore();
-  useEffect(() => {
-    document.title = "Scooby Documentation";
-  }, []);
+
 
   return (
     <>

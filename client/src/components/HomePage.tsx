@@ -8,8 +8,6 @@ export function HomePage() {
   const { setPage, setAuditStep, wallet } = useStore()
   const [showWalletNudge, setShowWalletNudge] = useState(false);
 
- 
-
   function startAudit() {
     setPage('audit')
     setAuditStep(wallet ? 2 : 1)
@@ -406,11 +404,11 @@ const sections = [
             </p>
     
             <div className="flex items-center gap-3">
-              <a
-                href="/dashboard"
-                className="bg-[#8b8df8] hover:bg-[#7a7cf2] text-white font-semibold px-7 py-3 rounded-full text-[15px] transition-all shadow-sm active:scale-95">
+              <button
+                 onClick={() => setPage('audit')}
+                className="bg-[#8b8df8] hover:bg-[#7a7cf2] text-white cursor-pointer font-semibold px-7 py-3 rounded-full text-[15px] transition-all shadow-sm active:scale-95">
                 Run Audit
-              </a>
+              </button>
     
               <a
                 href="/"
