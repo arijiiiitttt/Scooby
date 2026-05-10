@@ -227,8 +227,8 @@ const sections = [
             />
             <div className="absolute inset-0 flex items-center justify-center p-4 md:p-10">
               <img
-                src="/images/assets/dashboard.png"
-                className="w-full max-w-[1150px] rounded-xl shadow-2xl border border-white/10"
+                src="/images/assets/2.png"
+                className="w-full max-w-[1190px] rounded-xl shadow-2xl border border-white/10"
                 alt="dashboard preview"
               />
             </div>
