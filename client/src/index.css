@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+/* :root {
+  --font-mono: 'Space Mono', monospace;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+} */
+
+@font-face {
+  font-family:Cooll ;
+  src: url(/fonts/Cool.woff2);
+}
+.cool{
+  font-family:Cooll,sans-serif;
+}
+
+@layer base{
+  :root,html {
+    font-family: 'Cooll', system-ui, -apple-system, sans-serif;
+  }
+}
+
+
+* { box-sizing: border-box; }
+
+
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+textarea, input[type="text"] { outline: none; }
