@@ -29,11 +29,11 @@ Scooby is a decentralized smart contract security platform where developers conn
 ---
  
 ## The Problem
- 
-Smart contract exploits on Solana have caused hundreds of millions in losses. A proper audit from a firm like OtterSec or Halborn costs $20K–$100K and takes weeks. Most hackathon teams and indie builders skip it entirely. Users have no way to know if a protocol is safe.
- 
-Scooby closes this gap.
- 
+
+Smart contract exploits on Solana have resulted in hundreds of millions of dollars in losses. Traditional audits from top firms cost $20K–$100K and take weeks to months. Most indie builders, hackathon teams, and early-stage protocols simply skip auditing — leaving users exposed.
+
+Scooby bridges this gap by making professional-grade security analysis fast, affordable, and verifiable on-chain.
+
 ---
  
 ## How It Works
@@ -116,15 +116,33 @@ Frontend (Vite + Bun)
 </p>
  
 ## Smart Contract
- 
-The Anchor program on Solana handles:
- 
-- **`initialize`** — Sets up the authority account and treasury wallet on-chain
-- **`collect_fee`** — Atomically transfers 0.008 SOL to the treasury and increments the user's `UserProfile` PDA. Fee amount is enforced by the program, not the backend.
-- **`create_attestation`** — Mints an `Attestation` PDA storing score, findings, timestamp, and user wallet. Requires a prior fee payment.
-- **`get_user_profile`** — Permissionless read of any wallet's on-chain audit history
-Program is currently deployed on **Solana Devnet**.
- 
+
+The Scooby protocol is built using **Anchor** on Solana. It provides a secure and fully on-chain mechanism for audit fee collection and security attestations.
+
+### Features
+
+- **Immutable Audit Records**: All attestations are stored permanently on-chain as PDAs.
+- **Enforced Payments**: Users must pay exactly **0.008 SOL** to receive 1 audit credit. The fee is enforced by the program.
+- **Transparent History**: Every user's audit credits, payments, and attestations are publicly viewable on-chain.
+- **Auditor Control**: Only the designated admin/auditor can publish attestations.
+
+### Instructions
+
+| Instruction            | Description |
+|------------------------|-----------|
+| `initialize`           | Initializes the global authority account and sets the treasury wallet. |
+| `collect_fee`          | Transfers **0.008 SOL** to the treasury and grants 1 audit credit to the user. Creates or updates the user's `UserProfile` PDA. |
+| `create_attestation`   | Consumes 1 audit credit from a user and creates an `Attestation` PDA with the audit score, vulnerability counts, report ID, and timestamp. |
+| `get_user_profile`     | Permissionless read access to any user's audit history and credit balance. |
+
+### Key Accounts
+
+- **`AuthorityState`** – Global platform configuration and statistics (PDA)
+- **`UserProfile`** – Per-user credits, total audits, and payment history (PDA)
+- **`Attestation`** – Individual audit report record (PDA)
+
+The program is currently deployed on **Solana Devnet**.
+
 ---
   
 ## Why Scooby
@@ -209,6 +227,7 @@ HELIUS_API_KEY=           # https://dashboard.helius.dev
 DATABASE_URL=             # https://console.neon.tech
 SOLANA_NETWORK=devnet
 PORT=3000
+FRONTEND_URL=http://localhost:5173
 AUDITOR_PRIVATE_KEY=      # from: cat ~/.config/solana/id.json
 TREASURY_WALLET=          # your treasury wallet public key
 PROGRAM_ID=               # from: anchor deploy output
@@ -218,10 +237,6 @@ PROGRAM_ID=               # from: anchor deploy output
  
 ```env
 VITE_API_URL=http://localhost:3000
-VITE_HELIUS_API_KEY=      # same as backend
-VITE_SOLANA_NETWORK=devnet
-VITE_PROGRAM_ID=          # same as backend
-VITE_TREASURY_WALLET=     # same as backend
 ```
  
 ### Run the Database Migration
@@ -294,11 +309,11 @@ There is no subscription, no free tier, and no hidden cost. One audit, one payme
 |---|---|---|---|---|
 | Cost | 0.008 SOL | $20K–$100K | Free but noisy | Free but shallow |
 | Speed | ~30 seconds | 2–6 weeks | Minutes | Minutes |
-| Solana-specific | ✅ | ✅ | ❌ | ❌ |
-| On-chain proof | ✅ | ❌ | ❌ | ❌ |
-| Audit history | ✅ | ❌ | ❌ | ❌ |
-| Composable badge | ✅ | ❌ | ❌ | ❌ |
-| Accessible to all | ✅ | ❌ | ✅ | ✅ |
+| Solana-specific | Yes | Yes | No | No |
+| On-chain proof | Yes | No | No | No |
+| Audit history | Yes | No | No | No |
+| Composable badge | Yes | No | No | No |
+| Accessible to all | Yes | No | Yes | Yes |
  
 ---
  
