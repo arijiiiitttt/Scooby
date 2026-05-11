@@ -276,42 +276,51 @@ export function HomePage() {
             AI-powered smart contract auditing built for developers shipping on Solana.
           </p>
 
-          <div className="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <div className="max-w-6xl mx-auto px-6 py-30 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
 
             {/* Card 1 */}
-            <div className="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="h-48 bg-gray-50 flex items-center justify-center p-6 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
-              <div className="p-8 text-center bg-gray-50">
-                <span className="text-purple-500 font-medium text-sm block mb-3">01</span>
-                <h3 className="text-gray-900 font-bold mb-2">
+            <div className="border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow relative overflow-visible flex flex-col">
+              <div className="h-56 bg-gray-100 flex items-end justify-center bg-[radial-gradient(#d1d5db_1px,transparent_1px)] [background-size:16px_16px] rounded-t-2xl relative overflow-visible">
+                <img src="/images/assets/upload.png" alt="Feature 1" className="relative z-10 h-64 w-auto object-contain object-bottom" />
+              </div>
+              <div className="px-6 py-6 text-center bg-gray-200 rounded-b-2xl relative z-10 flex-1 flex flex-col justify-center">
+                <span className="text-purple-500 font-medium text-sm block mb-2">01</span>
+                <h3 className="text-gray-900 font-bold mb-0">
                   Upload Contract. <span className="text-gray-500 font-bold">Submit your Anchor smart contract files for instant analysis.</span>
                 </h3>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="h-48 bg-gray-50 flex items-center justify-center p-6 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
-              <div className="p-8 text-center bg-gray-50">
-                <span className="text-purple-500 font-medium text-sm block mb-3">02</span>
-                <h3 className="text-gray-900 font-bold mb-2">
+            <div className="border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow relative overflow-visible flex flex-col">
+              <div className="h-56 bg-gray-100 flex items-end justify-center bg-[radial-gradient(#d1d5db_1px,transparent_1px)] [background-size:16px_16px] rounded-t-2xl relative overflow-visible">
+                <img src="/images/assets/scan.png" alt="Feature 2" className="relative z-10 h-64 w-auto object-contain object-bottom" />
+              </div>
+              <div className="px-6 py-6 text-center bg-gray-200 rounded-b-2xl relative z-10 flex-1 flex flex-col justify-center">
+                <span className="text-purple-500 font-medium text-sm block mb-2">02</span>
+                <h3 className="text-gray-900 font-bold mb-0">
                   AI Audit. <span className="text-gray-500 font-bold">Scooby scans for vulnerabilities, unsafe logic, and common Solana security risks.</span>
                 </h3>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="h-48 bg-gray-50 flex items-center justify-center p-6 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
-              <div className="p-8 text-center bg-gray-50">
-                <span className="text-purple-500 font-medium text-sm block mb-3">03</span>
-                <h3 className="text-gray-900 font-bold mb-2">
+            <div className="border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow relative overflow-visible flex flex-col">
+              <div className="h-56 bg-gray-100 flex items-end justify-center bg-[radial-gradient(#d1d5db_1px,transparent_1px)] [background-size:16px_16px] rounded-t-2xl relative overflow-visible">
+                <img src="/images/assets/report.png" alt="Feature 3" className="relative z-10 h-64 w-auto object-contain object-bottom" />
+              </div>
+              <div className="px-6 py-6 text-center bg-gray-200 rounded-b-2xl relative z-10 flex-1 flex flex-col justify-center">
+                <span className="text-purple-500 font-medium text-sm block mb-2">03</span>
+                <h3 className="text-gray-900 font-bold mb-0">
                   Fix Fast. <span className="text-gray-500 font-bold">Get detailed reports with suggestions to patch issues before deployment.</span>
                 </h3>
               </div>
             </div>
 
           </div>
+
+
         </section>
 
 
