@@ -19,6 +19,8 @@
 ---
 
 ## What is Scooby?
+
+Built for the Superteam Earn Frontier Hackathon (100xDevs Frontier Track).
  
 > AI-powered smart contract auditing for Solana. Instant. Affordable. Verifiable on-chain.
  
@@ -26,6 +28,15 @@ Just like Scooby-Doo uncovers hidden mysteries, Scooby uncovers hidden vulnerabi
  
 Scooby is a decentralized smart contract security platform where developers connect their Phantom wallet, submit Anchor/Rust code, pay a small on-chain fee, and receive an instant AI-powered security audit. For contracts that pass the safety threshold, Scooby mints a verifiable on-chain audit attestation — permanent proof, publicly verifiable by anyone.
  
+---
+## Project Media
+
+
+| Media Type | Link |
+| :--- | :--- |
+| **Pitch Video** | [Watch the Pitch Video here](https://youtu.be/4mE_oPALb78) |
+| **Demo Video** | [Watch the Demo Video here](https://youtu.be/Xk7LLdoaUg4) |
+
 ---
  
 ## The Problem
@@ -35,6 +46,8 @@ Smart contract exploits on Solana have resulted in hundreds of millions of dolla
 Scooby bridges this gap by making professional-grade security analysis fast, affordable, and verifiable on-chain.
 
 ---
+
+
  
 ## How It Works
 
